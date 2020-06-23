@@ -1,0 +1,259 @@
+@import 'node_modules/bootstrap/scss/bootstrap.scss';
+@import 'variables';
+@import 'component';
+@import 'responsive'; 
+
+.body{
+    font-family: $font-family-roboto;
+    color: $color-texto;
+}
+
+.header{
+    background-color: $fondo-header;
+    min-height: 100px;
+    padding-top: 12px;
+    &__container{
+        @extend .container;
+        &__navbar{
+            @extend .navbar;
+            padding: 0;
+            display: block;
+            &__row{
+                @extend .row;
+                width: 100%;
+            }
+            .navbar-collapse{
+                max-width: 900px;
+                margin: auto;
+            }
+        }
+    }
+    &__container-icons{ 
+        position: absolute;
+        right: 0;
+        top: 10px;
+        &__link{
+            &__svg{
+                height: 25px;
+                margin: 0 4px;
+                transform: scale(1);
+                &__path{
+                    fill: #fff;
+                }
+            }
+            &:hover{
+                .header__container-icons__link__svg{
+                    transform: scale(1.1);
+                    &__path{
+                        transition: all 300ms ease;
+                        fill: $a-hover;
+                    }
+                }
+            }
+        }
+    }
+    &__navbar-toggler{
+        @extend .navbar-toggler;
+        position: absolute;
+        left: 20px;
+        top: 7px;
+        padding: 0;
+        &:focus{
+            outline: 0;
+        }
+        &__svg{
+            width: 23px;
+            &__path{
+                fill: $texto-header;
+            }
+        }
+    }
+    &__navbar-brand{
+        display: block;
+        margin: 0;
+        text-align: center;
+        &__img{
+            max-width: 206px;
+            width: 100%;
+        }
+    }
+    &__navbar-nav{
+        @extend .navbar-nav;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        width: 100%;
+        padding-top: 20px;
+        &__item__link{
+            @extend .links-header;
+        }
+    }
+}
+
+.main{
+    background-color: $texto-header;
+    padding: 50px 0 120px;
+    &__card{
+        @extend .card;
+        background: none;
+        overflow: hidden;
+        border: 0;
+        border-radius: 0;
+        margin-bottom: 40px;
+        transform: scale(1);
+        transition: all 300ms ease;
+        &:hover{
+            transform: scale(1.02);
+            box-shadow: -1px 0px 12px 1px #c3c3c3;
+            .main__card__body{
+                padding-left: 10px;
+            }
+        }
+        &__img{
+            max-width: 100%;
+            height: auto;
+            border-radius: 0;
+            border-bottom: 1px solid $fondo-header;
+            margin-bottom: 5px;
+        }
+        &__body{
+            padding: 0;
+            transition: all 300ms ease;
+            border: 0;
+            &__product, &__price{
+                @extend .texto;
+                margin-bottom: 0;
+            }
+            &__price{
+                font-weight: 700;
+            }
+        }
+    }
+}
+
+.aside{
+    &__h1{
+        @extend .h1;
+        border-bottom: 1px solid $color-texto;
+        padding-bottom: 5px;
+        margin-bottom: 15px;
+    }
+    &__container-filter{
+        &__h2{
+            @extend .h2;
+        }
+        &__h3{
+            @extend .h3;
+            background-color: $gris-claro;
+            padding: 5px 20px;
+            margin-bottom: 5px;
+        }
+        &__ul{
+            padding: 0;
+            margin: 0 0 10px 0;
+            &__li{
+                list-style: none; 
+                padding: 0 20px;
+                &.active{
+                    .texto{
+                        color: #000;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.footer{
+    background-color: $fondo-header;
+    &__contenedor-link{
+        max-width: 800px;
+        margin: auto;
+        display: flex;
+        justify-content: space-around;
+        flex-direction: row;
+        &__link{
+            color: $texto-header;
+            padding: 15px 0;
+            font-size: $font-size-16;
+            &:hover{
+                color: $a-hover;
+            }
+        }
+    }
+}
+
+@include respond-to(991px){
+    .body{
+        padding-top: 70px;
+    }
+    .texto{
+        font-size: $font-size-20;
+    }
+    .header{
+        min-height: 69px;
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 100;
+        width: 100%;
+        &__navbar-brand__img{
+            max-width: 140px;
+            margin-top: 13px;
+        }
+        &__navbar-nav{
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 15px;
+            &__item{
+                display: block;
+                width: 100%;
+                &__link{
+                    width: 100%;
+                    display: block;
+                    text-align: center;
+                    padding: 10px 0;
+                    border-bottom: 1px solid $gris-oscuro;
+                }
+            }
+        }
+        &__container-icons{
+            &__link{
+                &__svg{
+                    margin: 0;
+                }
+                &:nth-child(1), &:nth-child(3){
+                    display: none;
+                }
+            }
+        }
+    }
+    .aside__container-filter{
+        display: none;
+    }
+    .main{
+        padding: 10px 0;
+        &__card{
+            &:hover{
+                transform: scale(1);
+                box-shadow: none;
+                .main__card__body{
+                    padding-left: 0;
+                }
+            }
+        }
+    }
+    .footer{
+        padding: 10px 0;
+        &__contenedor-link{
+            flex-direction: column;
+            &__link{
+                text-align: center;
+                padding: 7px 0;
+            }
+        }
+    }
+
+}
+
+

@@ -1,0 +1,53 @@
+.texto{
+    font-family: $font-family-roboto;
+    font-weight: $font-style-regular;
+    font-size: $font-size-16;
+    line-height: $line-spacing-22;
+    letter-spacing: $character-spacing-0-32;
+    color: $color-texto;
+}
+.links-header {
+    font-family: $font-family-roboto;
+    font-weight: $font-style-regular;
+    font-size: $font-size-20;
+    line-height: $line-spacing-24;
+    letter-spacing: $character-spacing-0-4;
+    color: $texto-header;
+    text-transform: $text-transform-uppercase;
+    &.active{
+        font-weight: $font-style-bold;
+    }
+}
+.h3{
+    font-family: $font-family-roboto;
+    font-weight: $font-style-bold;
+    font-size: $font-size-16;
+    line-height: $line-spacing-19;
+    letter-spacing: $character-spacing-0-32;
+    color: $color-texto;
+}
+.h2{
+    font-family: $font-family-roboto;
+    font-weight: $font-style-bold;
+    font-size: $font-size-20;
+    line-height: $line-spacing-24;
+    letter-spacing: $character-spacing-0-4;
+    color: $color-texto;
+}
+.h1{
+    font-family: $font-family-roboto;
+    font-weight: $font-style-bold;
+    font-size: $font-size-24;
+    line-height: $line-spacing-29;
+    letter-spacing: $character-spacing-0-48;
+    color: $color-texto;
+}
+a{
+    transition: all 300ms ease;
+    text-decoration: none;
+    &:hover{
+        text-decoration: none;
+        color: $a-hover;
+        text-decoration: none;
+    }
+}

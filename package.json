@@ -1,0 +1,25 @@
+{
+  "name": "glamit-test-maquetado",
+  "version": "1.0.0",
+  "description": "glamit-test",
+  "dependencies": {
+    "bootstrap": "^4.5.0",
+    "node-sass": "^4.14.1",
+    "serve": "^11.3.2"
+  },
+  "scripts": {
+    "watch": "node-sass -w sass -o css",
+    "build": "node-sass sass -o css",
+    "start": "serve "
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Brianc31/test-maquetado.git"
+  },
+  "author": "Ciccarelli Brian",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Brianc31/test-maquetado/issues"
+  },
+  "homepage": "https://github.com/Brianc31/test-maquetado#readme"
+}
